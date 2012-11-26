@@ -2,8 +2,7 @@
  * 
  *  Libmemcached library
  *
- *  Copyright (C) 2011 Data Differential, http://datadifferential.com/ 
- *  All rights reserved.
+ *  Copyright (C) 2011 Data Differential, http://datadifferential.com/
  *
  *  Redistribution and use in source and binary forms, with or without
  *  modification, are permitted provided that the following conditions are
@@ -41,12 +40,13 @@
 extern "C" {
 #endif
 
+LIBMEMCACHED_API
 memcached_return_t memcached_exist(memcached_st *memc, const char *key, size_t key_length);
 
+LIBMEMCACHED_API
 memcached_return_t memcached_exist_by_key(memcached_st *memc,
                                           const char *group_key, size_t group_key_length,
                                           const char *key, size_t key_length);
-
 #ifdef __cplusplus
-} // extern "C"
+}
 #endif

@@ -2,8 +2,8 @@
  * 
  *  Libmemcached library
  *
- *  Copyright (C) 2011 Data Differential, http://datadifferential.com/ 
- *  All rights reserved.
+ *  Copyright (C) 2011 Data Differential, http://datadifferential.com/
+ *  Copyright (C) 2010 Brian Aker All rights reserved.
  *
  *  Redistribution and use in source and binary forms, with or without
  *  modification, are permitted provided that the following conditions are
@@ -44,13 +44,13 @@ extern "C" {
 
 LIBMEMCACHED_API
 memcached_return_t memcached_delete(memcached_st *ptr, const char *key, size_t key_length,
-                                    time_t unused);
+                                    time_t expiration);
 
 LIBMEMCACHED_API
 memcached_return_t memcached_delete_by_key(memcached_st *ptr,
                                            const char *group_key, size_t group_key_length,
                                            const char *key, size_t key_length,
-                                           time_t unused);
+                                           time_t expiration);
 
 #ifdef __cplusplus
 }

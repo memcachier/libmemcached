@@ -2,8 +2,8 @@
  * 
  *  Libmemcached library
  *
- *  Copyright (C) 2011 Data Differential, http://datadifferential.com/ 
- *  All rights reserved.
+ *  Copyright (C) 2011 Data Differential, http://datadifferential.com/
+ *  Copyright (C) 2010 Brian Aker All rights reserved.
  *
  *  Redistribution and use in source and binary forms, with or without
  *  modification, are permitted provided that the following conditions are
@@ -48,6 +48,16 @@ memcached_return_t memcached_set_memory_allocators(memcached_st *ptr,
                                                    memcached_realloc_fn mem_realloc,
                                                    memcached_calloc_fn mem_calloc,
                                                    void *context);
+
+LIBMEMCACHED_API
+void memcached_get_memory_allocators(const memcached_st *ptr,
+                                     memcached_malloc_fn *mem_malloc,
+                                     memcached_free_fn *mem_free,
+                                     memcached_realloc_fn *mem_realloc,
+                                     memcached_calloc_fn *mem_calloc);
+
+LIBMEMCACHED_API
+void *memcached_get_memory_allocators_context(const memcached_st *ptr);
 
 #ifdef __cplusplus
 }
