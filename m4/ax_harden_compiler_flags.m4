@@ -87,12 +87,14 @@ AC_DEFUN([_SET_SANITIZE_FLAGS],
                 ])
           ])
 
-AC_DEFUN([_WARNINGS_AS_ERRORS],
-    [AC_CACHE_CHECK([if all warnings into errors],[ac_cv_warnings_as_errors],
-      [AS_IF([test "x$ac_cv_vcs_checkout" = xyes],[ac_cv_warnings_as_errors=yes],
-        [ac_cv_warnings_as_errors=no])
-      ])
-    ])
+# Don't fail on deprecation warning
+# libtest/main.cc:300:12: warning: ‘template<class> class std::auto_ptr’ is deprecated
+#AC_DEFUN([_WARNINGS_AS_ERRORS],
+#    [AC_CACHE_CHECK([if all warnings into errors],[ac_cv_warnings_as_errors],
+#      [AS_IF([test "x$ac_cv_vcs_checkout" = xyes],[ac_cv_warnings_as_errors=yes],
+#        [ac_cv_warnings_as_errors=no])
+#      ])
+#    ])
 
 # Note: Should this be LIBS or LDFLAGS?
 AC_DEFUN([_APPEND_LINK_FLAGS_ERROR],
@@ -362,4 +364,3 @@ AC_DEFUN([_HARDEN_CXX_COMPILER_FLAGS],
            _HARDEN_CC_COMPILER_FLAGS
            _HARDEN_CXX_COMPILER_FLAGS
            ])
-
