@@ -1,5 +1,7 @@
 # libmemcached
 
+**Update: the bug has been fixed by Canonical so this repo is no longer of any use.**
+
 This is a fork of the
 [`libmemcached` library on Launchpad](https://launchpad.net/libmemcached) which
 seem to be no longer maintained. The original README is in
